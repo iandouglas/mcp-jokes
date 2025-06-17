@@ -136,6 +136,97 @@ def search_multiple_jokes(query: str, count: int) -> List[str]:
     """
     return _search_jokes(query, count)
 
+@mcp.tool("add_joke")
+def add_joke(joke_text: str, topics: list[str]) -> str:
+    """
+    Add a new joke to the collection.
+
+    Creates a new joke in the collection with the provided text and topics.
+    The joke will be assigned a unique ID which is returned in the response.
+
+    Args:
+        joke_text (str): The text of the joke
+        topics (list[str]): List of topics/categories for the joke
+
+    Returns:
+        str: A confirmation message with the joke ID or error message
+
+    Example:
+        result = add_joke(
+            joke_text="Why did the function go to therapy? It had too many complex issues.",
+            topics=["programming", "therapy", "puns"]
+        )
+        # Returns: "Added joke with ID 43"
+    """
+    response = requests.post(
+        f"http://{API_HOSTNAME}:{API_PORT}/joke",
+        json={"joke": joke_text, "topics": topics}
+    )
+
+    if response.status_code == 201:
+        joke_data = response.json()
+        return f"Added joke with ID {joke_data['id']}"
+    else:
+        return f"Failed to add joke. Status: {response.status_code}"
+
+@mcp.resource("resource://joke/{joke_id}")
+def get_joke_by_id(joke_id: int) -> str:
+    """
+    Get a specific joke by its ID.
+
+    Retrieves a joke with a specific ID. This is useful when you want to
+    reference a particular joke or verify a joke was added successfully.
+
+    Args:
+        joke_id (int): The ID of the joke to retrieve
+
+    Returns:
+        str: The joke text if found, otherwise an error message
+
+    Example:
+        # Get joke with ID 42
+        joke = read_resource("resource://joke/42")
+    """
+    response = requests.get(f"http://{API_HOSTNAME}:{API_PORT}/joke/{joke_id}")
+
+    if response.status_code == 200:
+        joke_data = response.json()
+        return joke_data["joke"]
+    else:
+        return f"Failed to retrieve joke {joke_id}"
+
+@mcp.tool("delete_joke")
+def delete_joke(joke_id: int) -> str:
+    """
+    Delete a joke from the collection by its ID.
+
+    Permanently removes a joke from the collection. This action cannot be undone.
+
+    Args:
+        joke_id (int): The ID of the joke to delete
+
+    Returns:
+        str: A confirmation message or error message
+
+    Example:
+        result = delete_joke(42)
+        # Returns: "Successfully deleted joke 42"
+    """
+    try:
+        response = requests.delete(f"http://{API_HOSTNAME}:{API_PORT}/joke/{joke_id}")
+
+        if response.status_code == 200:
+            return f"Successfully deleted joke {joke_id}"
+        elif response.status_code == 404:
+            return f"Joke {joke_id} not found"
+        else:
+            return f"Failed to delete joke {joke_id}. Error: {response.text}"
+
+    except requests.RequestException as e:
+        logger.error(f"Network error while deleting joke {joke_id}: {e}")
+        return f"Network error while trying to delete joke {joke_id}"
+        return f"Failed to delete joke {joke_id}. Status: {response.status_code}"
+
 if __name__ == "__main__":
     logger.info("Starting MCP Server...")
     try:
