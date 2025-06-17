@@ -1,0 +1,10 @@
+[project]
+name = "mcp-jokes"
+version = "0.1.0"
+description = "An MCP server that will fetch and save jokes"
+readme = "README.md"
+requires-python = ">=3.12"
+dependencies = [
+    "fastmcp>=2.8.1",
+    "requests>=2.32.4",
+]

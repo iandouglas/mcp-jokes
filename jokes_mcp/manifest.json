@@ -1,0 +1,10 @@
+{
+  "name": "jokes",
+  "version": "0.1.0",
+  "description": "Random joke provider via MCP",
+  "mcp": {
+    "transport": "stdio",
+    "command": ["./.venv/bin/python", "./main.py"],
+    "cwd": "/TODO/path/to/jokes_mcp"
+  }
+}

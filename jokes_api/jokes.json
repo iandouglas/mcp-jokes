@@ -1,0 +1,297 @@
+[
+  {
+    "joke": "What does a baby computer call his father? Data.",
+    "topics": [
+      "tech",
+      "family"
+    ],
+    "id": 1
+  },
+  {
+    "joke": "After an unsuccessful harvest, why did the farmer decide to try a career in music? Because he had a ton of sick beets.",
+    "topics": [
+      "food",
+      "music",
+      "farming"
+    ],
+    "id": 2
+  },
+  {
+    "joke": "I only seem to get sick on weekdays. I must have a weekend immune system.",
+    "topics": [
+      "health",
+      "work"
+    ],
+    "id": 3
+  },
+  {
+    "joke": "My friend was showing me his tool shed and pointed to a ladder. \"That's my stepladder, but I never knew my real ladder.\"",
+    "topics": [
+      "tools",
+      "family"
+    ],
+    "id": 4
+  },
+  {
+    "joke": "What do you call a Frenchman wearing sandals? Philippe Flop.",
+    "topics": [
+      "clothing",
+      "shoes"
+    ],
+    "id": 5
+  },
+  {
+    "joke": "Why is it so cheap to throw a party at a haunted house? Because the ghosts bring all the boos.",
+    "topics": [
+      "party",
+      "ghost",
+      "drinking"
+    ],
+    "id": 6
+  },
+  {
+    "joke": "I don't get why Marvel doesn't use the Hulk to advertise more. He's basically one big Banner.",
+    "topics": [
+      "movies",
+      "marvel",
+      "superhero"
+    ],
+    "id": 7
+  },
+  {
+    "joke": "What brand of underwear do scientists wear? Kelvin Klein.",
+    "topics": [
+      "science",
+      "clothing",
+      "fashion"
+    ],
+    "id": 8
+  },
+  {
+    "joke": "Which days are the strongest? Saturday and Sunday. The rest are weekdays.",
+    "topics": [
+      "strength"
+    ],
+    "id": 9
+  },
+  {
+    "joke": "Did you know your pupils are the last part to stop working when you die? They dilate.",
+    "topics": [
+      "death",
+      "eyes"
+    ],
+    "id": 10
+  },
+  {
+    "joke": "My wife asked me the other day where I got so much candy. I said, \"I always have a few Twix up my sleeve.\"",
+    "topics": [
+      "food",
+      "spouse"
+    ],
+    "id": 11
+  },
+  {
+    "joke": "How do cows stay up to date? They read the Moo-spaper.",
+    "topics": [
+      "animals",
+      "news"
+    ],
+    "id": 12
+  },
+  {
+    "joke": "What's the difference between a well-dressed man on a unicycle and a poorly-dressed man on a bicycle? Attire.",
+    "topics": [
+      "clothing",
+      "bike"
+    ],
+    "id": 13
+  },
+  {
+    "joke": "I hate my job\u2014all I do is crush cans all day. It's soda pressing.",
+    "topics": [
+      "work",
+      "drinks"
+    ],
+    "id": 14
+  },
+  {
+    "joke": "Where do pirates get their hooks? Second hand stores.",
+    "topics": [
+      "shopping",
+      "pirates"
+    ],
+    "id": 15
+  },
+  {
+    "joke": "Of all the inventions of the last 100 years, the dry erase board has to be the most remarkable.",
+    "topics": [
+      "office",
+      "school"
+    ],
+    "id": 16
+  },
+  {
+    "joke": "To whoever stole my copy of Microsoft Office, I will find you. You have my Word.",
+    "topics": [
+      "tech",
+      "software",
+      "crime"
+    ],
+    "id": 17
+  },
+  {
+    "joke": "What do you call a line of men waiting to get haircuts? A barberqueue.",
+    "topics": [
+      "beauty",
+      "food",
+      "hair"
+    ],
+    "id": 18
+  },
+  {
+    "joke": "If you make fun at any other method of measuring liquids, you may be held in contempt of quart.",
+    "topics": [
+      "measurement",
+      "legal"
+    ],
+    "id": 19
+  },
+  {
+    "joke": "Who were the greenest Presidents in US history? The bushes.",
+    "topics": [
+      "politics",
+      "nature"
+    ],
+    "id": 20
+  },
+  {
+    "joke": "My hotel tried to charge me ten dollars extra for air conditioning. That wasn't cool.",
+    "topics": [
+      "travel",
+      "money",
+      "weather"
+    ],
+    "id": 21
+  },
+  {
+    "joke": "What do you call a beehive without an exit? Unbelievable.",
+    "topics": [
+      "animals",
+      "nature"
+    ],
+    "id": 22
+  },
+  {
+    "joke": "If I ever find the doctor who screwed up my limb replacement surgery, I'll kill him with my bear hands.",
+    "topics": [
+      "medical",
+      "animals"
+    ],
+    "id": 23
+  },
+  {
+    "joke": "Did you know that the first french fries weren't cooked in France? They were cooked in Greece.",
+    "topics": [
+      "food",
+      "international"
+    ],
+    "id": 24
+  },
+  {
+    "joke": "This morning, Siri said, \"Don't call me Shirley.\" I accidentally left my phone in Airplane mode.",
+    "topics": [
+      "tech",
+      "movies"
+    ],
+    "id": 25
+  },
+  {
+    "joke": "It's easy to convince ladies not to eat Tide Pods, but harder to deter gents.",
+    "topics": [
+      "cleaning",
+      "gender"
+    ],
+    "id": 26
+  },
+  {
+    "joke": "I asked my date to meet me at the gym but she never showed up. I guess the two of us aren't going to work out.",
+    "topics": [
+      "relationship",
+      "fitness"
+    ],
+    "id": 27
+  },
+  {
+    "joke": "How do you find Will Smith in a snowstorm? You look for fresh prints.",
+    "topics": [
+      "celebrity",
+      "weather"
+    ],
+    "id": 28
+  },
+  {
+    "joke": "The difference between a numerator and a denominator is a short line. Only a fraction of people will understand this",
+    "topics": [
+      "math"
+    ],
+    "id": 29
+  },
+  {
+    "joke": "I found a wooden shoe in my toilet today. It was clogged.",
+    "topics": [
+      "clothing",
+      "home"
+    ],
+    "id": 30
+  },
+  {
+    "joke": "I just broke up with my mathematician girlfriend. She was obsessed with an X.",
+    "topics": [
+      "math",
+      "relationship"
+    ],
+    "id": 31
+  },
+  {
+    "joke": "I can't take my dog to the pond anymore because the ducks keep attacking him. That's what I get for buying a pure bread dog.",
+    "topics": [
+      "animals",
+      "food"
+    ],
+    "id": 32
+  },
+  {
+    "joke": "Why do programmers prefer dark mode? Because light attracts bugs!",
+    "topics": [
+      "programming",
+      "software"
+    ],
+    "id": 34
+  },
+  {
+    "joke": "Why did the programmer quit his job? Because he didn't get arrays!",
+    "topics": [
+      "programming",
+      "work"
+    ],
+    "id": 35
+  },
+  {
+    "joke": "Why did the AI go to therapy? It was having an identity crisis!",
+    "topics": [
+      "ai",
+      "technology",
+      "therapy"
+    ],
+    "id": 36
+  },
+  {
+    "joke": "Why did the extension developer go to therapy? Too many dependency issues!",
+    "topics": [
+      "programming",
+      "therapy",
+      "extensions"
+    ],
+    "id": 37
+  }
+]
