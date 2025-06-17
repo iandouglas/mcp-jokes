@@ -77,6 +77,65 @@ def get_random_joke() -> str:
         return joke_data["joke"]
     return "Failed to retrieve joke."
 
+def _search_jokes(query: str, count: int) -> List[str]:
+    """Helper function to handle the actual joke search request"""
+    logger.info(f"Searching for {count} jokes matching: {query}")
+
+    try:
+        response = requests.get(
+            f"http://{API_HOSTNAME}:{API_PORT}/joke/search",
+            params={"q": query, "count": count},
+            timeout=5
+        )
+
+        if response.status_code == 200:
+            jokes_data = response.json()
+            return [joke["joke"] for joke in jokes_data]
+        else:
+            logger.error(f"Search failed with status {response.status_code}")
+            return [f"Failed to retrieve jokes. Status: {response.status_code}"]
+
+    except requests.RequestException as e:
+        logger.error(f"Request failed while searching for jokes: {e}")
+        return [f"Failed to retrieve jokes due to network error"]
+
+@mcp.resource("resource://jokes/search/{query}")
+def search_one_joke(query: str) -> List[str]:
+    """
+    Search for a single joke containing the query string.
+
+    Parameters:
+        query: Search term to find in joke text or topics
+
+    Returns:
+        List containing one matching joke text
+
+    Example:
+        # Get one joke about animals
+        jokes = read_resource("resource://jokes/search/animals")
+        # Returns: ["Why don't cats like online shopping? They prefer a cat-alog!"]
+    """
+    return _search_jokes(query, 1)
+
+@mcp.resource("resource://jokes/search/{query}/{count}")
+def search_multiple_jokes(query: str, count: int) -> List[str]:
+    """
+    Search for multiple jokes containing the query string.
+
+    Parameters:
+        query: Search term to find in joke text or topics
+        count: Number of jokes to return
+
+    Returns:
+        List of matching joke texts
+
+    Example:
+        # Get three jokes about animals
+        jokes = read_resource("resource://jokes/search/animals/3")
+        # Returns: ["joke1", "joke2", "joke3"]
+    """
+    return _search_jokes(query, count)
+
 if __name__ == "__main__":
     logger.info("Starting MCP Server...")
     try:
