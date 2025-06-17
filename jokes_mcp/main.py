@@ -34,6 +34,26 @@ logger = logging.getLogger(__name__)
 
 mcp = FastMCP(name="jokes")
 
+@mcp.resource("resource://status")
+def get_mcp_status() -> Dict:
+    """
+    Check if the MCP server is running and can access our API.
+
+    This endpoint verifies the status of the MCP server by making a simple request to a known resource. If the server responds correctly, it is considered "up" and will tell you how many jokes it has available.
+
+    Returns:
+        Dict: A dictionary containing the status and number of jokes available.
+
+    Example:
+        status = read_resource("resource://status")
+        # {"status":"running","jokes_count":35}
+    """
+    try:
+        response = requests.get(f"http://{API_HOSTNAME}:{API_PORT}/status", timeout=5)
+        return response.json()
+    except requests.RequestException as e:
+        logger.error(f"Error checking MCP status: {e}")
+        return {"error": str(e)}
 
 if __name__ == "__main__":
     logger.info("Starting MCP Server...")
