@@ -55,6 +55,28 @@ def get_mcp_status() -> Dict:
         logger.error(f"Error checking MCP status: {e}")
         return {"error": str(e)}
 
+@mcp.resource("resource://joke")
+def get_random_joke() -> str:
+    """
+    Get a random joke from the collection.
+
+    This endpoint fetches a completely random joke from the entire collection,
+    regardless of topic or content. Each call will likely return a different joke.
+
+    Returns:
+        str: A random joke text
+
+    Example:
+        joke = read_resource("resource://joke")
+        # "Why did the programmer quit his job? Because he didn't get arrays!"
+    """
+    response = requests.get(f"http://{API_HOSTNAME}:{API_PORT}/joke")
+
+    if response.status_code == 200:
+        joke_data = response.json()
+        return joke_data["joke"]
+    return "Failed to retrieve joke."
+
 if __name__ == "__main__":
     logger.info("Starting MCP Server...")
     try:
